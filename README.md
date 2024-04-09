@@ -30,7 +30,11 @@ Na fase de exploração dos dados, um **engenheiro de dados** deve considerar os
 Lembre-se de que a exploração de dados é fundamental para **entender o conjunto de dados**, identificar insights e tomar decisões informadas durante todo o processo de engenharia de dados².
 
 Origem: conversa com o Bing, 09/04/2024
+
 (1) Understanding Data Exploration in Data Science | Institute of Data. https://www.institutedata.com/blog/data-exploration-in-data-science/.
+
 (2) What Is Data Exploration? | Coursera. https://www.coursera.org/articles/data-exploration.
+
 (3) Essential Data Engineering Skills: A Comprehensive Guide. https://iabac.org/blog/essential-data-engineering-skills-a-comprehensive-guide.
+
 (4) 14 Essential Data Engineering Tools to Use in 2024 | DataCamp. https://www.datacamp.com/blog/top-data-engineer-tools.
