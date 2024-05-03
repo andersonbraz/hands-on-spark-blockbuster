@@ -14,21 +14,28 @@ def __get_raw():
     df = spark.read.option("delimiter", ",").option("header", True).csv("sources/*.csv")
     df = df.withColumn("source", F.input_file_name())
     df = df.withColumn("id_title", F.md5(F.col("title")))
-    # df_titles.show(truncate=False)
+    # df.show(truncate=False)
     return df
 
 def get_all_titles():
     df_raw = __get_raw()
     df = df_raw.withColumn("source", __get_name_source("source"))
     df = df.select("source", "title", "type", "director", "country")
-    # df_final.show(truncate=False)
+    # df.show(truncate=False)
     return df
 
 def get_titles_by_source(source):
     df_titles = get_all_titles()
     df = df_titles.filter(F.upper(F.col("source")) == source.upper())
     df = df.select("source", "title", "type", "director", "country")
-    # df_final.show(truncate=False)
+    # df.show(truncate=False)
+    return df
+
+def get_type_total():
+    df_curated = get_all_titles()
+    df = df_curated.groupBy("source", "type").agg(F.count(F.col("type")).alias("total"))
+    df = df.na.drop()
+    # df.show(truncate=False)
     return df
 
 # print("Total items:", df_final.count())

@@ -32,7 +32,17 @@ def display_disney():
         st.write(df.toPandas())
 
 def main():
+
+    # Config Site
+
+    st.set_page_config(
+        page_title="Blockbuster",
+        page_icon=":clapper:",
+        layout="wide",
+        initial_sidebar_state="expanded")
     
+    # Items Menu
+
     pages = {
         "Todas": display_home,
         "Amazon Prime": display_amazon,
@@ -40,9 +50,16 @@ def main():
         "Disney Plus": display_disney,
     }
 
+    # Sidebar
+
     st.sidebar.header("Blockbuster")
+
+    # Menu
     
     page = st.sidebar.selectbox("Selecione uma plataforma:", tuple(pages.keys()))
+
+    # Page
+
     pages[page]()
 
 if __name__ == "__main__":
