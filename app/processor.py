@@ -1,4 +1,3 @@
-from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from utils import init_spark
 
@@ -48,3 +47,4 @@ def get_type_total():
 
 # df_filter = df_final.filter((F.col("title") == "Zombie Dumb"))
 # df_filter.show(truncate=False)
+
